@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+   * Important: Así se codificará en el siguiente orden los estilos de class.
+   - Colors
+   - Container / Text Features
+   - Position / Displays
+   - Animations
+   ! Evitar la mayoría de los BG que no se usen para la maquetación. 
+*/
+
+body{
+    background-color: #AEBDCA;
+}
+
+.header{
+    /* background-color: green; */
+    width: 100%;
+    font-family: Bungee;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: center;
+    /* line-height: 8px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.nav{
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disabled{
+    display: none;
+}
+
+.navContainer{
+    background-color: #7895B2;
+    /* background-color: #78b28c; */
+    border-radius: 25px;
+
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* flex-direction: column; */
+    
+    /* * Tratar de arreglar la transition de los options */
+}
+/* TODO Revisar los display, porque hay algunos innecesarios */
+.navNumberPrincipal, .navNumberOption{
+    background-color: #7895B2;
+    width: 330px;
+    height: 120px;
+    border-radius: 25px;
+    position: relative;
+}
+
+.navNumberPrincipal > span, .navNumberOption > span {
+    /* background-color: olivedrab; */
+    font-family: Cascadia Code PL;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 73px;
+    position: absolute;
+    left: 130px;
+    top: 25px;
+
+}
+
+.option2{
+    background-color: #7895B2;
+    border-radius: 0px;
+    transition: all .5s ease;
+}
+
+.option3{
+    background-color: #7895B2;
+    border-radius: 0 0 25px 25px;
+    transition: all .5s ease;
+}
+
+.option3:hover,.option2:hover{
+    background-color: white;
+}
+
+.navImage{
+    /* background-color: black; */
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 60%;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.navImage.open{
+    /* background-color: red; */
+    transform: rotate(-90deg);
+    transition: all .5s;
+}
+
+.btnEliminar{
+    background-color: #6FC3BE;
+    width: 330px;
+    height: 120px;
+    border-radius: 25px;
+    border-color: transparent;
+
+    margin-left: 10%;
+
+    font-family: Cascadia Code PL;
+    font-size: 55px;
+    font-weight: 400;
+
+    line-height: 66px;
+    letter-spacing: 0em;
+    text-align: center;
+
+
+
+    left: 818px;
+    top: 296px;
+}
