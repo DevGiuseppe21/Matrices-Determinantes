@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrices/Determinación</title>
-    <link rel="shortcut icon" href="resources/matriz.png" type="image/x-icon">
+    <title>Matrices/Determinantes</title>
+    <link rel="shortcut icon" href="resources/setting.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="header">
-        <h1>Determinantes</h1>
-        <h1>Matrices de orden</h1>
+        <h1>DETERMINANTES DE MATRICES DE ORDEN</h1>
+        <h2>By Joseph Grant (GiuseppeDev)</h2>
     </div>
     
     <div class="nav">
         <div class="navContainer">
             <img class="navImage" src="resources/setting.png"></img>
-            <div class="navNumberPrincipal" id="matrixType1"><span id="value1">3</span></div>
-            <div class="navNumberOption disabled option2" id="matrixtype2"><span id="value2">4</span></div>
-            <div class="navNumberOption disabled option3" id="matrixType3"><span id="value3">2</span></div>
+            <div class="navNumberPrincipal" id="matrixType1"><span id="value1">2</span></div>
+            <div class="navNumberOption disabled option2" id="matrixtype2"><span id="value2">3</span></div>
+            <div class="navNumberOption disabled option3" id="matrixType3"><span id="value3">4</span></div>
         </div>
-        <button class="btnEliminar" onclick="message();">Eliminar</button>
+        <button id="btnEliminar" class="btnEliminar">Eliminar</button>
     </div>
-    <script src="js/mains.js"></script>
+    
+    <div class="contentNumber" id="contentNumber">
+        <input type="number" id="matrixValue"class="contentNumberInput" required onchange="matrixType2();"/>
+        <input type="number" id="matrixValue"class="contentNumberInput" required onchange="matrixType2();"/>
+        <input type="number" id="matrixValue"class="contentNumberInput" required onchange="matrixType2();"/>
+        <input type="number" id="matrixValue"class="contentNumberInput" required onchange="matrixType2();"/>
+    </div>
+    <div class="containerResult">
+        <h1>Resultado</h1>
+        <div class="btnSection">
+            <div id="btnResultado" class="btnResult">0</div>
+            <div id="btnTutorial" class="btnTutorial disabled">Tutorial</div>
+        </div>
+    </div>
+    <div id="containerTutorial" class="containerTutorial">
+        
+    </div>
 
-    <!-- <div class="contentNumbers">
-        <form class="contentNumberForm">
-            <input type="text" class="contenNumberImputs" placeholder="" required onchange=""/>
-            <input type="text" class="contenNumberImputs" placeholder="" required onchange=""/>
-            <input type="text" class="contenNumberImputs" placeholder="" required onchange=""/>
-            <input type="text" class="contenNumberImputs" placeholder="" required onchange=""/>
-            <input type="text" class="contenNumberImputs" placeholder="" required onchange=""/>
-          </form>
-    </div> -->
+    <script src="js/mains.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
 </body>
 </html>

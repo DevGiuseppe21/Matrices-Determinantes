@@ -51,13 +51,10 @@ navNumberOption[1].addEventListener('click', () =>{
 // * btn Delete Button
 
 matrixDeleteValue.addEventListener('click', () => {
-    alert("Clicked");
     const elem = document.querySelectorAll('#matrixValue');
     elem.forEach(elem => {elem.value='';});
     document.getElementById("btnResultado").innerText = '0';
-
-    if (document.getElementById("divTutorial") != null) {btnTutorial.classList.add("disabled");tutorialContent();}
-    // tutorialContent();
+    alert("Clicked");
 });
 
 const matrixCreateElement = () => {
@@ -115,8 +112,11 @@ const matrixType2 = () => {
     console.log(resultado);
     btnTutorial.classList.remove('disabled');
 
-    if (document.querySelector("#divTutorial") !== null) {
+
+// ! Check This, This have relation to if the element exists in the DOM will erase o create the tutorial space
+    if (document.getElementById("divTutorial") !== null) {
         console.log("The element exists");
+        // divTutorial.classList.add('disabled');
         divTutorial.remove();
     }
     else {
@@ -152,7 +152,7 @@ btnTutorial.addEventListener('click', () => {
 
     // Swal.fire(
     //     '!El Tutorial dinámico se ha creado con éxito¡',
-    //     'Revisa debajo y encontrarás un tutorial hermoso :)',
+    //     'Revisa debajo y encontrarás un tutorial hermoso :) <br/> Recuerda que si cambias algun valor, este se actualizará dinámicamente en el tutorial',
     //     'success'
     // )
     tutorialContent();
@@ -161,49 +161,65 @@ btnTutorial.addEventListener('click', () => {
 // a = false //  if (!a) <=> if (!a == true)
 
 const tutorialContent = () => {
+    
+    // !En vez de tener tutorial Open, solamente verificas con la última condicional que tienes debajo.
+    // * Tambien puedes cambiar el getElementById con el querySelector
 
-    if (document.getElementById("divTutorial") == null) {
-        let value = [];
-        let matrixNumber2Values = document.querySelectorAll('#matrixValue');
-        matrixNumber2Values.forEach( key => {value.push(Number(key.value));});
-        console.table(value);
+        if(tutorialOpen == false){
+            // alert("Clicked");
+            console.clear();
+            // console.log('Clicked');
+            let value = [];
+            let matrixNumber2Values = document.querySelectorAll('#matrixValue');
+            matrixNumber2Values.forEach( key => {value.push(Number(key.value));});
+            console.table(value);
 
-        if(matrixNumber == 2){
-            let divTutorial = document.createElement('div');
-            divTutorial.className = 'divTutorial';
-            divTutorial.id = 'divTutorial';
-        
-            let divTitle = document.createElement('h1');
-            divTitle.innerHTML = 'Definición de determinante';
-        
-            let divTitleContent = document.createElement('p');
-            divTitleContent.innerHTML = 'El determinante de una matriz 𝐴 de orden 𝑛, es un número escalar que se relaciona con la matriz, mediante una regla de operación. Denotada por 𝑑𝑒𝑡𝐴 = |𝐴|.'
-        
-            let divTitleH1 = document.createElement('h1');
-            divTitleH1.innerHTML = 'Determinantes de Segundo Orden';
-        
-            let divImage = document.createElement('img');
-            divImage.src = 'resources/tutorial/detOrden2.png';
-        
-            let divTitleH2 = document.createElement('h2');
-            divTitleH2.innerHTML = 'En tu caso:'
-        
-            let divTitleH2Content = document.createElement('p');
-            divTitleH2Content.innerHTML = "detA = (" + value[0] + '*' +  value [3] + ') - (' + value[1] + '*' + value[2] + ") <br> detA = ("+ value[0]*value[3] + ") - (" + value[1]*value[2] +") <br> detA = " + resultado;
-        
-            document.getElementById('containerTutorial').appendChild(divTutorial);
-            divTutorial.appendChild(divTitle);
-            divTutorial.appendChild(divTitleContent);
-            divTutorial.appendChild(divTitleH1);
-            divTutorial.appendChild(divImage);
-            divTutorial.appendChild(divTitleH2);
-            divTutorial.appendChild(divTitleH2Content);
+
+            if(matrixNumber == 2){
+                let divTutorial = document.createElement('div');
+                divTutorial.className = 'divTutorial';
+                divTutorial.id = 'divTutorial';
             
-            // tutorialOpen = true;
-        }
+                let divTitle = document.createElement('h1');
+                divTitle.innerHTML = 'Definición de determinante';
+            
+                let divTitleContent = document.createElement('p');
+                divTitleContent.innerHTML = 'El determinante de una matriz 𝐴 de orden 𝑛, es un número escalar que se relaciona con la matriz, mediante una regla de operación. Denotada por 𝑑𝑒𝑡𝐴 = |𝐴|.'
+            
+                let divTitleH1 = document.createElement('h1');
+                divTitleH1.innerHTML = 'Determinantes de Segundo Orden';
+            
+                let divImage = document.createElement('img');
+                divImage.src = 'resources/tutorial/detOrden2.png';
+            
+                let divTitleH2 = document.createElement('h2');
+                divTitleH2.innerHTML = 'En tu caso:'
+            
+                let divTitleH2Content = document.createElement('p');
+                divTitleH2Content.innerHTML = "detA = (" + value[0] + '*' +  value [3] + ') - (' + value[1] + '*' + value[2] + ") <br> detA = ("+ value[0]*value[3] + ") - (" + value[1]*value[2] +") <br> detA = " + resultado;
+            
+                document.getElementById('containerTutorial').appendChild(divTutorial);
+                divTutorial.appendChild(divTitle);
+                divTutorial.appendChild(divTitleContent);
+                divTutorial.appendChild(divTitleH1);
+                divTutorial.appendChild(divImage);
+                divTutorial.appendChild(divTitleH2);
+                divTutorial.appendChild(divTitleH2Content);
+                
+                // tutorialOpen = true;
+            }
+            tutorialOpen = true;
 
-    }
-    else {
-        divTutorial.remove();
+    }else if(tutorialOpen == true){
+
+        if (document.getElementById("divTutorial") !== null) {
+            alert("The element exists");
+            divTutorial.remove();
+        }
+        else {
+            alert("The element does not exist");
+            tutorialOpen = false;
+            tutorialContent();
+        }
     }
 }

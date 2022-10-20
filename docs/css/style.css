@@ -11,6 +11,7 @@
    - Animations
    ! Evitar la mayoría de los BG que no se usen para la maquetación. 
 */
+@font-face {font-family: SecularOne;src: url(/resources/fonts/SecularOne-Regular.ttf);}
 
 body{
     background-color: #AEBDCA;
@@ -19,8 +20,8 @@ body{
 .header{
     /* background-color: green; */
     width: 100%;
-    font-family: Bungee;
-    font-size: 30px;
+    font-family: 'SecularOne';
+    font-size: 22px;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: center;
@@ -39,10 +40,6 @@ body{
     align-items: center;
 }
 
-.disabled{
-    display: none;
-}
-
 .navContainer{
     background-color: #7895B2;
     /* background-color: #78b28c; */
@@ -56,7 +53,7 @@ body{
     
     /* * Tratar de arreglar la transition de los options */
 }
-/* TODO Revisar los display, porque hay algunos innecesarios */
+
 .navNumberPrincipal, .navNumberOption{
     background-color: #7895B2;
     width: 330px;
@@ -67,7 +64,7 @@ body{
 
 .navNumberPrincipal > span, .navNumberOption > span {
     /* background-color: olivedrab; */
-    font-family: Cascadia Code PL;
+    font-family: 'SecularOne';
     font-size: 50px;
     font-weight: 800;
     line-height: 73px;
@@ -90,7 +87,7 @@ body{
 }
 
 .option3:hover,.option2:hover{
-    background-color: white;
+    background-color: #9ab4ce;
 }
 
 .navImage{
@@ -119,7 +116,7 @@ body{
 
     margin-left: 10%;
 
-    font-family: Cascadia Code PL;
+    font-family: 'SecularOne';
     font-size: 55px;
     font-weight: 400;
 
@@ -127,8 +124,154 @@ body{
     letter-spacing: 0em;
     text-align: center;
 
-
-
     left: 818px;
     top: 296px;
 }
+
+.contentNumber{
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px 270px;
+    margin-top: 20px;
+}
+
+.contentNumber2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px 270px;
+    margin: 0;
+    margin-top: 20px;
+    gap: 30px 170px;
+    margin-bottom: 10px;
+}
+
+.contentNumber3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px 270px;
+    margin: 0;
+    margin-top: 20px;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+/* input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+/* -webkit-appearance: none;
+margin: 0;
+}
+
+input[type=number] { -moz-appearance:textfield; } */
+
+.contentNumberInput{
+    background: rgba(158, 210, 198, 1);
+    box-shadow: rgba(84, 186, 185, 1) 7px 8px;
+    font-family: 'SecularOne';
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: center;
+
+    width: 330px;
+    height: 120px;
+    border: solid transparent;
+    border-radius: 25px;
+}
+
+.contentNumberInput:focus{
+    outline: none;
+}
+
+.contentNumberInput::selection{
+    background-color: white;
+    color: #6FC3BE;
+}
+
+.containerResult{
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: 'SecularOne';
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.btnSection{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.btnResult{
+    background-color: #7895B2;
+    width: 330px;
+    height: 120px;
+    border-radius: 25px;
+    border-color: transparent;
+
+    font-size: 55px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnResult::selection{
+    background-color: white;
+    color: #7895B2;
+}
+
+.btnTutorial{
+    background-color: orangered;
+    width: 330px;
+    height: 120px;
+    border-radius: 25px;
+    border-color: transparent;
+
+    font-size: 55px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.containerTutorial{
+    /* background-color: crimson; */
+
+    font-family: 'SecularOne';
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0em;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divTutorial{
+    background-color: #f5f5f5;
+    width: 1300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.disabled{display: none;}
