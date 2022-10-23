@@ -18,14 +18,12 @@ body{
 }
 
 .header{
-    /* background-color: green; */
     width: 100%;
     font-family: 'SecularOne';
     font-size: 22px;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: center;
-    /* line-height: 8px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,24 +32,17 @@ body{
 }
 
 .nav{
-    /* background-color: crimson; */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .navContainer{
     background-color: #7895B2;
-    /* background-color: #78b28c; */
     border-radius: 25px;
-
-    position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* flex-direction: column; */
-    
-    /* * Tratar de arreglar la transition de los options */
+    position: relative;    
 }
 
 .navNumberPrincipal, .navNumberOption{
@@ -63,7 +54,6 @@ body{
 }
 
 .navNumberPrincipal > span, .navNumberOption > span {
-    /* background-color: olivedrab; */
     font-family: 'SecularOne';
     font-size: 50px;
     font-weight: 800;
@@ -71,7 +61,6 @@ body{
     position: absolute;
     left: 130px;
     top: 25px;
-
 }
 
 .option2{
@@ -91,7 +80,6 @@ body{
 }
 
 .navImage{
-    /* background-color: black; */
     width: 100px;
     height: 100px;
     position: absolute;
@@ -102,7 +90,6 @@ body{
 }
 
 .navImage.open{
-    /* background-color: red; */
     transform: rotate(-90deg);
     transition: all .5s;
 }
@@ -113,29 +100,19 @@ body{
     height: 120px;
     border-radius: 25px;
     border-color: transparent;
-
-    margin-left: 10%;
-
     font-family: 'SecularOne';
     font-size: 55px;
     font-weight: 400;
-
-    line-height: 66px;
-    letter-spacing: 0em;
     text-align: center;
-
-    left: 818px;
-    top: 296px;
 }
 
 .contentNumber{
-    /* background-color: crimson; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 40px 270px;
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
 }
 
 .contentNumber2{
@@ -143,7 +120,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px 270px;
     margin: 0;
     margin-top: 20px;
     gap: 30px 170px;
@@ -162,14 +138,6 @@ body{
     margin-bottom: 10px;
 }
 
-/* input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-/* -webkit-appearance: none;
-margin: 0;
-}
-
-input[type=number] { -moz-appearance:textfield; } */
-
 .contentNumberInput{
     background: rgba(158, 210, 198, 1);
     box-shadow: rgba(84, 186, 185, 1) 7px 8px;
@@ -178,16 +146,13 @@ input[type=number] { -moz-appearance:textfield; } */
     font-weight: 400;
     letter-spacing: 0em;
     text-align: center;
-
     width: 330px;
     height: 120px;
     border: solid transparent;
     border-radius: 25px;
 }
 
-.contentNumberInput:focus{
-    outline: none;
-}
+.contentNumberInput:focus{outline: none;}
 
 .contentNumberInput::selection{
     background-color: white;
@@ -195,23 +160,20 @@ input[type=number] { -moz-appearance:textfield; } */
 }
 
 .containerResult{
-    /* background-color: crimson; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
     font-family: 'SecularOne';
     font-size: 22px;
     font-weight: 400;
 }
 
 .btnSection{
-    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-wrap: wrap;
 }
 
 .btnResult{
@@ -220,10 +182,8 @@ input[type=number] { -moz-appearance:textfield; } */
     height: 120px;
     border-radius: 25px;
     border-color: transparent;
-
     font-size: 55px;
     text-align: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,25 +200,22 @@ input[type=number] { -moz-appearance:textfield; } */
     height: 120px;
     border-radius: 25px;
     border-color: transparent;
-
     font-size: 55px;
     text-align: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px;
+    animation: btnTutorial 5s alternate;
 }
 
-.containerTutorial{
-    /* background-color: crimson; */
+@keyframes btnTutorial {0%{opacity: 0;}100%{opacity: 1;}}
 
+.containerTutorial{
     font-family: 'SecularOne';
     font-size: 22px;
     font-weight: 400;
     letter-spacing: 0em;
-
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,7 +224,6 @@ input[type=number] { -moz-appearance:textfield; } */
 .divTutorial{
     background-color: #f5f5f5;
     width: 1300px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,3 +231,53 @@ input[type=number] { -moz-appearance:textfield; } */
 }
 
 .disabled{display: none;}
+
+/* Tablets */ 
+/* @media (min-width: 768px) and (max-width: 990px) {
+    body{
+        background-color: goldenrod;
+    }
+} */
+
+/* Cellphone */ 
+@media (max-width: 767px) {
+   
+    .header,.divTutorial{
+        font-size: 18px;
+    }
+
+    .navNumberPrincipal, .navNumberOption, .btnEliminar , .btnResult, .btnTutorial{
+        width: 300px;
+    }
+
+    .contentNumberInput{
+        width: 120px;
+        height: 70px;
+        border-radius: 20px;
+    }
+
+    .contentNumber{
+        gap: 20px 40px;
+    }
+
+    .contentNumber2{
+        gap: 15px 45px;
+    }
+
+    .contentNumber3{
+        gap: 13px;
+    }
+
+    .contentNumber3>.contentNumberInput,.contentNumber2 > .contentNumberInput{
+        width: 70px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .divTutorial, .divTutorial >img{
+        width: 100%;
+        text-align: center;
+    }
+
+
+}
