@@ -42,8 +42,7 @@ navNumberOption[1].addEventListener('click', () =>{
     let matrixNumber2 = document.getElementById("value3").innerText;
     let matrixReplace = document.getElementById("value1").innerText = matrixNumber2;
     matrixNumber2 = document.getElementById("value3").innerText =  matrixNumber;
-
-    // console.log(matrixNumber, typeof matrixNumber);
+    
     matrixCreateElement();
     
 });
