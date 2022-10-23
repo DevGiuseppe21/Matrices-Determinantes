@@ -11,18 +11,6 @@
    - Animations
    ! Evitar la mayoría de los BG que no se usen para la maquetación. 
 */
-/* @font-face {
-    font-family: SecularOne;src: url(resources/fonts/SecularOne-Regular.ttf);
-} */
-
-
-@font-face {
-    font-family: 'SecularOne';
-    src: url('secularone-regular-webfont.woff2') format('woff2'),
-         url('secularone-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 body{
     background-color: #AEBDCA;
@@ -30,8 +18,7 @@ body{
 
 .header{
     width: 100%;
-    font-family: 'SecularOne';
-    font-size: 22px;
+    font-family: 'Secular One', sans-serif;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: center;
@@ -65,7 +52,7 @@ body{
 }
 
 .navNumberPrincipal > span, .navNumberOption > span {
-    font-family: 'SecularOne';
+    font-family: 'Secular One', sans-serif;
     font-size: 50px;
     font-weight: 800;
     line-height: 73px;
@@ -111,7 +98,7 @@ body{
     height: 120px;
     border-radius: 25px;
     border-color: transparent;
-    font-family: 'SecularOne';
+    font-family: 'Secular One', sans-serif;
     font-size: 55px;
     font-weight: 400;
     text-align: center;
@@ -152,7 +139,7 @@ body{
 .contentNumberInput{
     background: rgba(158, 210, 198, 1);
     box-shadow: rgba(84, 186, 185, 1) 7px 8px;
-    font-family: 'SecularOne';
+    font-family: 'Secular One', sans-serif;
     font-size: 50px;
     font-weight: 400;
     letter-spacing: 0em;
@@ -175,7 +162,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: 'SecularOne';
+    font-family: 'Secular One', sans-serif;
     font-size: 22px;
     font-weight: 400;
 }
@@ -223,7 +210,7 @@ body{
 @keyframes btnTutorial {0%{opacity: 0;}100%{opacity: 1;}}
 
 .containerTutorial{
-    font-family: 'SecularOne';
+    font-family: 'Secular One', sans-serif;
     font-size: 22px;
     font-weight: 400;
     letter-spacing: 0em;
