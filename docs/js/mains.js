@@ -1,3 +1,4 @@
+const loader = document.querySelector('.loader');
 const navNumberPrincipal = document.querySelector('.navNumberPrincipal');
 const navNumberOption = document.querySelectorAll('.navNumberOption');
 const navImage = document.querySelector('.navImage');
@@ -8,6 +9,9 @@ let navImageOpen = false;
 let matrixNumber = '2';
 let resultado;
 let matrixValues = []
+
+// Loader
+setTimeout(() => {loader.classList.add('disabled');}, 5000);;
 
 // Nav Image btn
 navImage.addEventListener('click', () => {
@@ -243,3 +247,5 @@ const tutorialContent = () => {
 
     }else {divTutorial.remove();}
 };
+
+// TODO Alert to advice tutorial div has been created.
