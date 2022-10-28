@@ -242,7 +242,7 @@ body{
     color: #7895B2;
 }
 
-.btnTutorial{
+.btnTutorial, .btnCloseTutorial{
     background-color: orangered;
     width: 330px;
     height: 120px;

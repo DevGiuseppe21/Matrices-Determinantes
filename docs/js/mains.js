@@ -4,14 +4,15 @@ const navNumberOption = document.querySelectorAll('.navNumberOption');
 const navImage = document.querySelector('.navImage');
 const matrixDeleteValue = document.querySelector("#btnEliminar");
 const btnTutorial = document.querySelector('#btnTutorial');
+const btnCloseTutorial = document.querySelector("#btnCloseTutorial");
 
 let navImageOpen = false;
 let matrixNumber = '2';
 let resultado;
 let matrixValues = []
 
-// Loader
-setTimeout(() => {loader.classList.add('disabled');}, 5000);;
+
+setTimeout(() => {loader.classList.add('disabled');}, 0000);;
 
 // Nav Image btn
 navImage.addEventListener('click', () => {
@@ -41,19 +42,13 @@ navNumberOption[0].addEventListener('click', () =>{
 navNumberOption[1].addEventListener('click', () =>{
     navImage.classList.remove('open');
     navImageOpen = false;
-    navNumberOption.forEach(navNumberOption => {navNumberOption.classList.add('disabled');});
-    
-    
+    navNumberOption.forEach(navNumberOption => {navNumberOption.classList.add('disabled');});   
     matrixNumber = document.getElementById("value1").innerText;
     let matrixNumber2 = document.getElementById("value3").innerText;
     let matrixReplace = document.getElementById("value1").innerText = matrixNumber2;
     matrixNumber2 = document.getElementById("value3").innerText =  matrixNumber;
-    
     matrixCreateElement();
-    
 });
-
-// * Check checkTutorialDiv
 
 //  Delete Inputs Values
 matrixDeleteValue.addEventListener('click', () => {
@@ -87,7 +82,6 @@ const matrixCreateElement = () => {
             divInput.setAttribute('type','number');
             divInput.id = 'matrixValue';
             divInput.className = 'contentNumberInput';
-            divInput.setAttribute('required','');
             divInput.setAttribute('onchange', 'matrixType();');
             contentNumber.className = 'contentNumber2';
             document.getElementById('contentNumber').appendChild(divInput);
@@ -111,7 +105,6 @@ const matrixType = () => {
     matrixValues.splice(0,16,)
     let matrixNumber2Values = document.querySelectorAll('#matrixValue');
     matrixNumber2Values.forEach( key => {matrixValues.push(Number(key.value));});
-
     if(matrixNumber === '2'){
         resultado = (matrixValues[0] * matrixValues [3]) - (matrixValues[1] * matrixValues[2]);
     }else if(matrixNumber === '3'){
@@ -130,8 +123,14 @@ const matrixType = () => {
 
 // Create Tutorial
 btnTutorial.addEventListener('click', () => {tutorialContent();});
+
 const tutorialContent = () => {
     if (document.getElementById("divTutorial") == null) {
+        Swal.fire(
+            '!El Tutorial dinámico se ha creado con éxito¡',
+            'Revisa debajo y encontrarás un tutorial hermoso :)',
+            'success'
+        );
 
         let divTutorial = document.createElement('div');
         divTutorial.className = 'divTutorial';
@@ -148,6 +147,11 @@ const tutorialContent = () => {
         let divImage2 = document.createElement('img');
         let divTitleH2 = document.createElement('h2');
         let divTitleH2Content = document.createElement('p');
+        let BtnCloseTutorial = document.createElement('div');
+        BtnCloseTutorial.setAttribute ('onclick', 'btnCloseTutorialClicked();');
+        BtnCloseTutorial.className = 'btnCloseTutorial';
+        BtnCloseTutorial.Id = 'btnCloseTutorial';
+        BtnCloseTutorial.innerText = 'Cerrar';
 
         if(matrixNumber == 2){        
             divTitleH1.innerHTML = 'Determinantes de Segundo Orden';
@@ -244,8 +248,16 @@ const tutorialContent = () => {
         divTutorial.appendChild(divImage2);
         divTutorial.appendChild(divTitleH2);
         divTutorial.appendChild(divTitleH2Content);
+        divTutorial.appendChild(BtnCloseTutorial);
 
-    }else {divTutorial.remove();}
+    }else {
+        Swal.fire(
+            '!El Tutorial dinámico se ha cerrado con éxito¡',
+            'Ingresa otros valores para seguir buscando la determinante.',
+            'error'
+        );
+        divTutorial.remove();
+    }
 };
 
-// TODO Alert to advice tutorial div has been created.
+const btnCloseTutorialClicked = () => {tutorialContent();};
