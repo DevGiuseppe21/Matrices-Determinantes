@@ -7,6 +7,7 @@ https://devgiuseppe21.github.io/Matrices-Determinantes/
 
 
 /* Documentation */
+
 10/13/2022 Notes
 1. avances en el nav
 	-evento click de la imagen
