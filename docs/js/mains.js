@@ -11,7 +11,6 @@ let matrixNumber = '2';
 let resultado;
 let matrixValues = []
 
-
 setTimeout(() => {loader.classList.add('disabled');}, 0000);;
 
 // Nav Image btn
@@ -56,53 +55,36 @@ matrixDeleteValue.addEventListener('click', () => {
     elem.forEach(elem => {elem.value='';});
     document.getElementById("btnResultado").innerText = ' ';
     let checkTutorialDiv = (document.getElementById("divTutorial") != null) ? btnTutorial.classList.add("disabled") + tutorialContent() : btnTutorial.classList.add("disabled");
+    Swal.fire(
+        '!Los datos ingresados han sido eliminados correctamente¡',
+        '',
+        'success'
+    );
 });
 
 // Create Inputs Elements
-
 const matrixCreateElement = () => {
     matrixNumber = document.getElementById("value1").innerText;
+    let matrixNumberElement = Number(matrixNumber * matrixNumber) ;
     const contentNumber = document.querySelector("#contentNumber");
     const elem = document.querySelectorAll('#matrixValue');
     elem.forEach(elem => {elem.remove();});
 
-    if(matrixNumber == '2'){
-        for (let index = 0; index < 4  ; index++) {
-            let divInput = document.createElement('input');
-            divInput.setAttribute('type','number');
-            divInput.id = 'matrixValue';
-            divInput.className = 'contentNumberInput';
-            divInput.setAttribute('onchange', 'matrixType();');
-            contentNumber.className = 'contentNumber';
-            document.getElementById('contentNumber').appendChild(divInput);
-        }
-    }else if(matrixNumber == '3'){
-        for (let index = 0; index < 9  ; index++) {
-            let divInput = document.createElement('input');
-            divInput.setAttribute('type','number');
-            divInput.id = 'matrixValue';
-            divInput.className = 'contentNumberInput';
-            divInput.setAttribute('onchange', 'matrixType();');
-            contentNumber.className = 'contentNumber2';
-            document.getElementById('contentNumber').appendChild(divInput);
-        }
-    }else if(matrixNumber == '4'){
-        for (let index = 0; index < 16  ; index++) {
-            let divInput = document.createElement('input');
-            divInput.setAttribute('type','number');
-            divInput.id = 'matrixValue';
-            divInput.className = 'contentNumberInput';
-            divInput.setAttribute('onchange', 'matrixType();');
-            contentNumber.className = 'contentNumber3';
-            document.getElementById('contentNumber').appendChild(divInput);
-        }
+    for (let index = 0; index < matrixNumberElement  ; index++) {
+        let divInput = document.createElement('input');
+        divInput.setAttribute('type','number');
+        divInput.id = 'matrixValue';
+        divInput.className = 'contentNumberInput';
+        divInput.setAttribute('onchange', 'matrixType();');
+        contentNumber.className = 'contentNumber' + matrixNumber;
+        document.getElementById('contentNumber').appendChild(divInput);
     }
     matrixType();
 };
 
 // Process
 const matrixType = () => {
-    matrixValues.splice(0,16,)
+    matrixValues.splice(0,16,);
     let matrixNumber2Values = document.querySelectorAll('#matrixValue');
     matrixNumber2Values.forEach( key => {matrixValues.push(Number(key.value));});
     if(matrixNumber === '2'){
