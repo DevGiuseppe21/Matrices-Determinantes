@@ -3,7 +3,7 @@
 
  Si necesitas contactarme para hacer algún proyecto genial juntos, mándame un mensaje por Teams o a mi correo de la universidad.
 
-https://devgiuseppe21.github.io/Matrices-Determinantes/
+https://giuseppedev21.github.io/Matrices-Determinantes/
 
 
 /* Documentation */
