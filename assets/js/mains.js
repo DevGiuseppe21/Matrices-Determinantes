@@ -9,9 +9,9 @@ const btnCloseTutorial = document.querySelector("#btnCloseTutorial");
 let navImageOpen = false;
 let matrixNumber = '2';
 let resultado;
-let matrixValues = []
+let matrixValues = [];
 
-setTimeout(() => {loader.classList.add('disabled');}, 0000);;
+setTimeout(() => {loader.classList.add('disabled');}, 5000);;
 
 // Nav Image btn
 navImage.addEventListener('click', () => {
